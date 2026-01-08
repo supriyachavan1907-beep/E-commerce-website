@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Silk Trench | Aarve</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Product Page Specific Overrides */
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 80px;
+            /* Space for fixed navbar */
+            min-height: 100vh;
+        }
+
+        .product-gallery {
+            flex: 1.2;
+            background-color: var(--gray-light);
+            min-width: 50%;
+            height: calc(100vh - 80px);
+            /* Full height minus nav */
+            overflow-y: hidden;
+            /* Simplified for demo, usually scrollable */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-details {
+            flex: 1;
+            padding: 4rem 5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #fff;
+        }
+
+        .breadcrumb {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .p-title {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+
+        .p-price {
+            font-size: 1.5rem;
+            font-family: var(--font-sans);
+            color: #444;
+            margin-bottom: 2rem;
+        }
+
+        .p-desc {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 3rem;
+            max-width: 400px;
+        }
+
+        .p-options {
+            margin-bottom: 2rem;
+        }
+
+        .option-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .option-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+        }
+
+        .size-btn {
+            background: none;
+            border: 1px solid #ddd;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: var(--font-sans);
+        }
+
+        .size-btn:hover,
+        .size-btn.active {
+            border-color: #000;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .btn-add {
+            width: 100%;
+            max-width: 300px;
+            padding: 1.2rem;
+            background-color: #111;
+            color: #fff;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-add:hover {
+            background-color: #333;
+        }
+
+        .gallery-placeholder {
+            width: 80%;
+            height: 80%;
+            background-color: #e8e6e1;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 900px) {
+            .product-container {
+                flex-direction: column;
+            }
+
+            .product-gallery,
+            .product-details {
+                min-width: 100%;
+                height: auto;
+            }
+
+            .product-gallery {
+                height: 60vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation (Reused) -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html#home" class="nav-link">Home</a>
+            <a href="index.html#collections" class="nav-link">Collections</a>
+        </div>
+
+        <div class="brand-logo">
+            <a href="index.html">Aarve</a>
+        </div>
+
+        <div class="nav-right">
+            <a href="#" class="nav-link">Login</a>
+            <a href="#" class="nav-icon"><i class="fas fa-search"></i></a>
+            <a href="#" class="nav-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
+        </div>
+
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Product Content -->
+    <div class="product-container">
+        <div class="product-gallery">
+            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&q=80"
+                alt="The Silk Trench" class="gallery-img">
+        </div>
+        <div class="product-details fade-in-up">
+            <div class="breadcrumb">Home / Collections / Outerwear</div>
+            <h1 class="p-title">The Silk Trench</h1>
+            <p class="p-price">$1,250</p>
+
+            <p class="p-desc">
+                Impeccably tailored from premium Italian silk. A fluid silhouette that transitions effortlessly from day
+                to evening.
+                Features a relaxed fit, belted waist, and subtle gold hardware.
+            </p>
+
+            <div class="p-options">
+                <div class="option-group">
+                    <span class="option-label">Size</span>
+                    <button class="size-btn">XS</button>
+                    <button class="size-btn active">S</button>
+                    <button class="size-btn">M</button>
+                    <button class="size-btn">L</button>
+                </div>
+            </div>
+
+            <button class="btn-add">Add to Bag</button>
+        </div>
+    </div>
+
+    <!-- Footer (Short) -->
+    <footer class="footer" style="padding-top: 2rem;">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Aarve. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Simple Interaction for Size Selection
+        const sizeBtns = document.querySelectorAll('.size-btn');
+        sizeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                sizeBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
